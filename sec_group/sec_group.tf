@@ -1,7 +1,6 @@
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      =  "vpc-09dd62df631f053a0"
+resource "aws_security_group" "external_by_terraform" {
+  name        = "external_by_terraform"
+
 
   ingress {
     description      = "TLS from VPC"
@@ -16,7 +15,7 @@ resource "aws_security_group" "allow_tls" {
     from_port        = 3306
     to_port          = 3306
     protocol         = "tcp"
-    cidr_blocks      = ["50.194.68.230/32"]
+    cidr_blocks      = ["50.194.68.231/32"]
   }
   
   ingress {
